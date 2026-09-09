@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check Pakistan electricity bills online by Reference Number or Customer ID.">
+  <title>Pakistan Electricity Bill Check — Online Bill Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">Pakistan Electricity Bill Portal <span>•</span> Fast access to official bill portals</div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Pakistan Electricity Bill Check home">
+        <div class="brand-mark">⚡</div>
+        <div>
+          <strong>PAK BILL</strong>
+          <small>Electricity Bill Check</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+
+      <nav id="mainNav">
+        <a class="active" href="#home">Bill Check</a>
+        <a href="#companies">Electricity Companies</a>
+        <a href="#calculator">Bill Calculator</a>
+        <a href="#new-connection">New Connection</a>
+        <a href="#guides">Guides</a>
+        <a href="#privacy">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">🇵🇰 Pakistan Electricity Bills</span>
+          <h1>Check Your Electricity Bill <span>Online</span></h1>
+          <p>Enter your Reference Number or Customer ID and open your bill through the relevant official billing portal.</p>
+          <div class="trust-row">
+            <span>✓ No login required</span>
+            <span>✓ Mobile friendly</span>
+            <span>✓ Official portal links</span>
+          </div>
+        </div>
+
+        <div class="bill-card">
+          <div class="card-head">
+            <div>
+              <h2>Check Electricity Bill</h2>
+              <p>Select your electricity company</p>
+            </div>
+            <span class="live-dot">●</span>
+          </div>
+
+          <label for="company">Electricity Company</label>
+          <select id="company">
+            <option value="">Select your company</option>
+          </select>
+
+          <div class="mode-switch" role="tablist" aria-label="Bill number type">
+            <button class="mode active" data-mode="reference" type="button">Reference Number</button>
+            <button class="mode" data-mode="customer" type="button">Customer ID</button>
+          </div>
+
+          <label id="numberLabel" for="billNumber">14 Digit Reference Number</label>
+          <input id="billNumber" inputmode="numeric" autocomplete="off" maxlength="14"
+                 placeholder="Enter 14 Digit Reference No." aria-describedby="hint">
+
+          <div class="save-line">
+            <label class="check"><input type="checkbox" id="saveNumber"> <span>Save this Number</span></label>
+            <span id="count">0 / 14</span>
+          </div>
+
+          <button id="checkBill" class="primary-btn" type="button">Check Bill <span>→</span></button>
+          <p id="message" class="message" role="status"></p>
+          <p id="hint" class="hint">Your number is used only to open the selected company's official bill page.</p>
+
+          <div class="recent" id="recentBox" hidden>
+            <div class="recent-title">Saved number</div>
+            <button id="recentButton" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div><strong>11</strong><span>PITC DISCOs</span></div>
+        <div><strong>1</strong><span>Central bill portal</span></div>
+        <div><strong>100%</strong><span>Responsive design</span></div>
+        <div><strong>Free</strong><span>Frontend hosting ready</span></div>
+      </div>
+    </section>
+
+    <section id="companies" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Coverage</span>
+          <h2>Electricity Companies in Pakistan</h2>
+          <p>Choose a company to open its bill checker. PITC currently lists 11 DISCOs; K-Electric uses its own official system.</p>
+        </div>
+        <div class="company-grid" id="companyGrid"></div>
+
+        <div class="ke-card">
+          <div class="company-icon ke">KE</div>
+          <div>
+            <h3>K-Electric</h3>
+            <p>Karachi electricity customers use the official K-Electric bill/account system rather than the PITC DISCO portal.</p>
+          </div>
+          <a class="outline-btn" href="https://www.ke.com.pk/customer-services/billls-and-e-payments/" target="_blank" rel="noopener">Open KE Bill ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section alt">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Utility</span>
+          <h2>Electricity Bill Calculator</h2>
+          <p>This starter calculator estimates usage cost only. Do not use it as an official payable amount because tariffs, taxes, FCA and other charges can change.</p>
+        </div>
+        <div class="calculator-card">
+          <label for="units">Units Consumed</label>
+          <input id="units" type="number" min="0" placeholder="e.g. 200">
+          <label for="rate">Approx. Rate per Unit (Rs.)</label>
+          <input id="rate" type="number" min="0" step="0.01" placeholder="e.g. 25">
+          <button id="calculate" class="primary-btn" type="button">Calculate Estimate</button>
+          <div id="estimate" class="estimate">Enter units and an approximate rate.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="new-connection" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Services</span>
+          <h2>New Electricity Connection</h2>
+          <p>Use the relevant official connection/application portal. This website does not submit applications on your behalf.</p>
+        </div>
+        <div class="service-grid">
+          <a class="service-card" href="https://enc.com.pk/" target="_blank" rel="noopener"><span>＋</span><h3>ENC New Connection</h3><p>Official Electricity New Connection portal</p></a>
+          <a class="service-card" href="https://fesco.enc.com.pk/" target="_blank" rel="noopener"><span>F</span><h3>FESCO ENC</h3><p>Faisalabad Electric Supply connection portal</p></a>
+          <a class="service-card" href="https://iesco.enc.com.pk/" target="_blank" rel="noopener"><span>I</span><h3>IESCO ENC</h3><p>Islamabad Electric Supply connection portal</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="guides" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Help Center</span>
+          <h2>Electricity Bill Guides</h2>
+        </div>
+        <div class="guide-grid">
+          <article><h3>Where is my Reference Number?</h3><p>It is normally printed on the upper part of your electricity bill. Enter the digits without spaces.</p></article>
+          <article><h3>Reference Number vs Meter Number</h3><p>The meter number identifies the physical meter; the bill lookup normally uses the billing reference/account identifier.</p></article>
+          <article><h3>How to download a duplicate bill</h3><p>After opening the official bill page, use its print/download options to save a copy.</p></article>
+          <article><h3>Bill not found?</h3><p>Check the company selection and digits. If the official portal is temporarily unavailable, try again later.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="section">
+      <div class="container narrow">
+        <div class="section-heading">
+          <span class="eyebrow">Privacy</span>
+          <h2>Privacy Policy</h2>
+          <p>This frontend does not need a user account. If the optional “Save this Number” feature is enabled, the number is stored locally in the user's browser using localStorage and is not sent to this site's server. The final bill is opened on the selected external official portal.</p>
+          <p class="small-note">Before publishing commercially, replace this starter policy with a legal/privacy policy appropriate to your hosting, analytics, advertising and any backend you add.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>PAK BILL</strong><p>Independent bill-navigation website. Not a government website and not affiliated with PITC or any DISCO.</p></div>
+      <div><strong>Quick Links</strong><a href="#companies">Companies</a><a href="#calculator">Calculator</a><a href="#guides">Guides</a></div>
+      <div><strong>Official Source</strong><a href="https://bill.pitc.com.pk/" target="_blank" rel="noopener">PITC Bill Portal ↗</a><a href="https://www.power.gov.pk/" target="_blank" rel="noopener">Ministry of Energy ↗</a></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> PAK BILL. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
